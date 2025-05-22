@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://o7x4754dptth"]
+
+[ext_resource type="Script" uid="uid://duro0g4f6rdl4" path="res://Scripts/Gal.gd" id="1_1q6bx"]
+[ext_resource type="Theme" uid="uid://c74jhe44mnc8u" path="res://Temas/UI.tres" id="1_15csw"]
+[ext_resource type="Texture2D" uid="uid://1ijf2kb0in76" path="res://Assets/Fondo.PNG" id="2_1q6bx"]
+[ext_resource type="AudioStream" uid="uid://b52qml5dy1idw" path="res://Assets/Audio/arcade-ui-6.wav" id="5_osvyf"]
+
+[node name="Galeria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1q6bx")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 336)
+scale = Vector2(13.1319, 13.1319)
+texture = ExtResource("2_1q6bx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 64.0
+offset_right = 867.0
+offset_bottom = 184.0
+theme = ExtResource("1_15csw")
+theme_override_font_sizes/font_size = 100
+text = "Galería"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 400)
+scale = Vector2(5, 5)
+
+[node name="Volver" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.75
+anchor_top = -0.69
+anchor_right = -1.75
+anchor_bottom = -0.69
+offset_left = 2040.0
+offset_top = 1015.12
+offset_right = 2224.0
+offset_bottom = 1071.12
+theme = ExtResource("1_15csw")
+text = "Volver"
+
+[node name="Video" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.75
+anchor_top = -0.69
+anchor_right = -1.75
+anchor_bottom = -0.69
+offset_left = 2504.0
+offset_top = 1015.12
+offset_right = 2688.0
+offset_bottom = 1071.12
+theme = ExtResource("1_15csw")
+text = "Vídeo"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 328.0
+offset_right = 1091.0
+offset_bottom = 389.0
+theme = ExtResource("1_15csw")
+theme_override_font_sizes/font_size = 60
+text = ">>"
+
+[node name="Past" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 328.0
+offset_right = 131.0
+offset_bottom = 389.0
+theme = ExtResource("1_15csw")
+theme_override_font_sizes/font_size = 60
+text = "<<"
+
+[node name="EfectoBoton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(848, 664)
+stream = ExtResource("5_osvyf")
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Past" to="." method="_on_past_pressed"]
+[connection signal="finished" from="EfectoBoton" to="." method="_on_efecto_boton_finished"]

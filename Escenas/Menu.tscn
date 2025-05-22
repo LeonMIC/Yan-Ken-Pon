@@ -1,0 +1,685 @@
+[gd_scene load_steps=18 format=3 uid="uid://brbf7op6n24sm"]
+
+[ext_resource type="Script" uid="uid://swry0gqe5xv4" path="res://Scripts/menu.gd" id="1_2ahv8"]
+[ext_resource type="Theme" uid="uid://c74jhe44mnc8u" path="res://Temas/UI.tres" id="1_o2l53"]
+[ext_resource type="Texture2D" uid="uid://1ijf2kb0in76" path="res://Assets/Fondo.PNG" id="3_arsku"]
+[ext_resource type="Texture2D" uid="uid://b3pb3e40yse0g" path="res://Assets/CPiedra.png" id="5_27k2t"]
+[ext_resource type="AudioStream" uid="uid://b52qml5dy1idw" path="res://Assets/Audio/arcade-ui-6.wav" id="6_2a5i7"]
+[ext_resource type="Texture2D" uid="uid://b46g36libkts4" path="res://Assets/CTijera.png" id="6_5c8jm"]
+[ext_resource type="Texture2D" uid="uid://cmi737xxj6r5m" path="res://Assets/CPapel.png" id="7_bmckm"]
+[ext_resource type="Texture2D" uid="uid://ho3bvvowcj76" path="res://Assets/Logo/Oreja_D.png" id="7_y57nq"]
+[ext_resource type="Texture2D" uid="uid://d2ree7gj8kyb3" path="res://Assets/Logo/Oreja_I.png" id="8_ik8kc"]
+[ext_resource type="Texture2D" uid="uid://btji6un4im78" path="res://Assets/Logo/Cara.png" id="9_arsku"]
+[ext_resource type="Theme" uid="uid://byv4e1cnjt6ge" path="res://Temas/Textos.tres" id="10_bcw8w"]
+[ext_resource type="PackedScene" uid="uid://b41l2h8aelbxi" path="res://Escenas/volumen.tscn" id="10_y57nq"]
+[ext_resource type="Texture2D" uid="uid://c0gn34e6echub" path="res://Assets/Audio_foto.png" id="11_ik8kc"]
+
+[sub_resource type="Animation" id="Animation_27k2t"]
+resource_name = "Logo"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrejaI:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.219036, 0.472333, 0.219036]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OrejaI:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(36.9985, 587.36), Vector2(42, 584), Vector2(36.9985, 587.36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OrejaD:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.219036, -0.0658887, 0.219036]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OrejaD:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(71.9985, 595.36), Vector2(70, 591), Vector2(71.9985, 595.36)]
+}
+
+[sub_resource type="Animation" id="Animation_2ahv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yan:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ken:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Piedra:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(242.262, 424)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Piedra:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tijera:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(389.956, 393.397)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tijera:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Papel:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(530.263, 424)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Papel:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("B_Jugar:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("OrejaI:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.219036]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("OrejaI:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36.9985, 587.36)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OrejaD:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.219036]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OrejaD:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(71.9985, 595.36)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("OrejaD:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("OrejaI:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Cara:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Logo:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("VolumeControl:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2a5i7"]
+resource_name = "prueba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yan:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ken:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Piedra:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(242, 467), Vector2(242.262, 424)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Piedra:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tijera:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(382, 465), Vector2(389.956, 393.397)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tijera:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Papel:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.3, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(530, 469), Vector2(530.263, 424)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Papel:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.3, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("B_Jugar:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("B_Galeria:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("B_Creditos:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OrejaD:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OrejaI:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Cara:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Logo:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("VolumeControl:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8shpa"]
+_data = {
+&"Logo": SubResource("Animation_27k2t"),
+&"RESET": SubResource("Animation_2ahv8"),
+&"prueba": SubResource("Animation_2a5i7")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ahv8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8shpa")
+}
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 264)
+scale = Vector2(11.6389, 11.6389)
+texture = ExtResource("3_arsku")
+
+[node name="Yan" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 107.936
+offset_right = 360.0
+offset_bottom = 227.936
+rotation = -0.0633729
+theme = ExtResource("1_o2l53")
+theme_override_colors/font_color = Color(0.282353, 0.521569, 0.878431, 1)
+text = "Yan"
+
+[node name="Ken" type="Label" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 91.936
+offset_right = 715.0
+offset_bottom = 211.936
+rotation = 0.101388
+theme = ExtResource("1_o2l53")
+theme_override_colors/font_color = Color(0.843137, 0.364706, 0.364706, 1)
+text = "-Ken"
+
+[node name="Pon" type="Label" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 115.936
+offset_right = 1051.0
+offset_bottom = 235.936
+rotation = -0.108782
+theme = ExtResource("1_o2l53")
+theme_override_colors/font_color = Color(0.101961, 0.619608, 0.478431, 1)
+text = "-Pon"
+
+[node name="Piedra" type="Sprite2D" parent="."]
+position = Vector2(242.262, 424)
+rotation = -0.288727
+scale = Vector2(5.31006, 5.31006)
+texture = ExtResource("5_27k2t")
+region_rect = Rect2(60, 0, 20, 32)
+
+[node name="Tijera" type="Sprite2D" parent="."]
+position = Vector2(389.956, 393.397)
+rotation = 0.00148951
+scale = Vector2(5.09034, 5.09034)
+texture = ExtResource("6_5c8jm")
+region_rect = Rect2(20, 0, 20, 32)
+
+[node name="Papel" type="Sprite2D" parent="."]
+position = Vector2(530.263, 424)
+rotation = 0.406574
+scale = Vector2(4.99256, 4.99256)
+texture = ExtResource("7_bmckm")
+region_rect = Rect2(40, 0, 20, 32)
+
+[node name="B_Jugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 312.0
+offset_right = 940.0
+offset_bottom = 362.0
+theme = ExtResource("1_o2l53")
+theme_override_font_sizes/font_size = 30
+text = "Jugar"
+
+[node name="B_Galeria" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 792.0
+offset_top = 392.0
+offset_right = 940.0
+offset_bottom = 442.0
+theme = ExtResource("1_o2l53")
+theme_override_font_sizes/font_size = 30
+text = "Galería"
+
+[node name="B_Creditos" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 784.0
+offset_top = 472.0
+offset_right = 954.0
+offset_bottom = 522.0
+theme = ExtResource("1_o2l53")
+theme_override_font_sizes/font_size = 30
+text = "Créditos"
+
+[node name="EfectoBoton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(784, 328)
+stream = ExtResource("6_2a5i7")
+bus = &"Effects"
+
+[node name="OrejaD" type="Sprite2D" parent="."]
+position = Vector2(71.9985, 595.36)
+rotation = 0.219036
+scale = Vector2(1.40656, 1.40656)
+texture = ExtResource("7_y57nq")
+region_enabled = true
+region_rect = Rect2(81, 16, 23, 35)
+
+[node name="OrejaI" type="Sprite2D" parent="."]
+position = Vector2(36.9985, 587.36)
+rotation = 0.219036
+scale = Vector2(1.39731, 1.39731)
+texture = ExtResource("8_ik8kc")
+region_enabled = true
+region_rect = Rect2(56, 16, 23, 35)
+
+[node name="Cara" type="Sprite2D" parent="."]
+position = Vector2(51.6353, 609.708)
+rotation = 0.219036
+scale = Vector2(1.43208, 1.43208)
+texture = ExtResource("9_arsku")
+region_enabled = true
+region_rect = Rect2(63, 33, 34, 28)
+
+[node name="Logo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 587.0
+offset_right = 228.0
+offset_bottom = 632.0
+theme = ExtResource("10_bcw8w")
+theme_override_colors/font_color = Color(0.831373, 0.772549, 0.682353, 1)
+theme_override_font_sizes/font_size = 15
+text = "Proyecto
+CMI"
+
+[node name="Volumen" parent="." instance=ExtResource("10_y57nq")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 424.0
+offset_right = 1104.0
+offset_bottom = 560.0
+theme = ExtResource("1_o2l53")
+bus_name = "Music"
+
+[node name="VolumeControl" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 560.0
+offset_right = 1128.0
+offset_bottom = 632.0
+theme = ExtResource("1_o2l53")
+icon = ExtResource("11_ik8kc")
+expand_icon = true
+
+[connection signal="pressed" from="B_Jugar" to="." method="_on_b_jugar_pressed"]
+[connection signal="pressed" from="B_Galeria" to="." method="_on_b_galeria_pressed"]
+[connection signal="pressed" from="B_Creditos" to="." method="_on_b_creditos_pressed"]
+[connection signal="finished" from="EfectoBoton" to="." method="_on_efecto_boton_finished"]
+[connection signal="pressed" from="VolumeControl" to="." method="_on_volume_control_pressed"]

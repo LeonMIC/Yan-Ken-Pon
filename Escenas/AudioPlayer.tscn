@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5vgh5uijal6"]
+
+[ext_resource type="Script" uid="uid://v3p0qtxvpomq" path="res://Scripts/audio_stream_player.gd" id="1_tfdp7"]
+[ext_resource type="AudioStream" uid="uid://b428q4t08f4w6" path="res://Assets/Audio/arcade-beat.mp3" id="2_r5mgg"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("2_r5mgg")
+bus = &"Music"
+script = ExtResource("1_tfdp7")

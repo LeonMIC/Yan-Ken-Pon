@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://bb3k7tua73h3i"]
+
+[ext_resource type="Script" uid="uid://c2qoebxaqxfsh" path="res://Scripts/credits.gd" id="1_5vkk3"]
+[ext_resource type="Theme" uid="uid://c74jhe44mnc8u" path="res://Temas/UI.tres" id="1_l7mwx"]
+[ext_resource type="Theme" uid="uid://byv4e1cnjt6ge" path="res://Temas/Textos.tres" id="3_5vkk3"]
+[ext_resource type="Texture2D" uid="uid://1ijf2kb0in76" path="res://Assets/Fondo.PNG" id="3_g1mow"]
+[ext_resource type="AudioStream" uid="uid://b52qml5dy1idw" path="res://Assets/Audio/arcade-ui-6.wav" id="6_g1mow"]
+
+[sub_resource type="Animation" id="Animation_g1mow"]
+resource_name = "Créditos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, 416), Vector2(240, 272)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dkrkv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwcio"]
+_data = {
+&"Créditos": SubResource("Animation_g1mow"),
+&"RESET": SubResource("Animation_dkrkv")
+}
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5vkk3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pwcio")
+}
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 336)
+scale = Vector2(13.1319, 13.1319)
+texture = ExtResource("3_g1mow")
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 56.0
+offset_right = 921.0
+offset_bottom = 176.0
+theme = ExtResource("1_l7mwx")
+theme_override_font_sizes/font_size = 100
+text = "Créditos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 416.0
+offset_right = 890.0
+offset_bottom = 560.0
+theme = ExtResource("3_5vkk3")
+text = "Alumna: Macarena Isabel León Canelo
+Asignatura: Creación Multimedia Interactiva
+Grupo: A
+2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volver" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.75
+anchor_top = -0.69
+anchor_right = -1.75
+anchor_bottom = -0.69
+offset_left = 2040.0
+offset_top = 1015.12
+offset_right = 2224.0
+offset_bottom = 1071.12
+theme = ExtResource("1_l7mwx")
+text = "Volver"
+
+[node name="EfectoBoton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(848, 664)
+stream = ExtResource("6_g1mow")
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]
+[connection signal="finished" from="EfectoBoton" to="." method="_on_efecto_boton_finished"]
